@@ -1,5 +1,7 @@
 name = input ("Hello!  What is your name?" )
 print (f"Nice to meet you, {name} !")
+city = input ("What city do you live in?" )
+print (f"{city} a beautiful!")
 age_input = input ("How old are you?" )
 age = int (age_input)
 bot_age = 3
