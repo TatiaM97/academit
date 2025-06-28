@@ -1,0 +1,11 @@
+name = input ("Hello!  What is your name?" ) # Приветствие, спрашиваем у пользователя имя
+print (f"Nice to meet you, {name} !") # Показываем строку с ответом на приветствие
+city = input ("What city do you live in?" ) # Спрашиваем у пользователя в каком городе он живет
+print (f"{city} a beautiful!") # Отвечаем
+age_input = input ("How old are you?" ) # Спрашиваем у пользователя возраст
+age = int (age_input)
+bot_age = 3
+age_difference = age - bot_age
+print(f"You are {age_difference} years older than me. I'm only {bot_age} years old")
+color = input ("What's your favorite color? ")
+print(f"Oh, {color} is a beautiful color!")
