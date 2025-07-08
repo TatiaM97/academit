@@ -1,0 +1,88 @@
+<!DOCTYPE html><!-- Указывает браузеру, что используется HTML5 -->
+<html lang="ru"><!-- Устанавливает язык страницы -->
+<head>
+    <meta charset="UTF-8"><!-- Задает кодировку UTF-8 (поддержка русских букв) -->
+    <title>Форма заказа</title><!-- Отображается в заголовке вкладки браузера -->
+    <link rel="stylesheet" href="style.css"><!-- Подключение внешнего CSS-файла -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Масштабирование страницы для мобильных устройств -->
+</head>
+<body>
+<h1>Форма заказа</h1><!-- Заголовок первого уровня -->
+<form class="form" action="/submit" method="post"><!-- Форма с методом POST и стилем "form" -->
+    <!-- Группа: Контактные данные -->
+    <div class="form-group">
+        <span>Контактные данные</span><br>
+        <!-- Текстовые поля ввода -->
+        <!-- Поле ФИО -->
+        <label for="name">ФИО:</label>
+        <input type="text" id="name" name="name" placeholder="Иванов Иван Иванович" required>
+        <br>
+        <!-- Поле Телефон -->
+        <label for="number">Телефон:</label>
+        <input type="tel" id="number" name="number" placeholder="+7-999-999-99-99" required>
+        <br>
+        <!-- Поле E-mail -->
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="ivanov@gmail.com" required>
+    </div>
+    <!-- Группа: Способ доставки -->
+    <div class="form-group">
+        <span>Способ доставки</span>
+        <br>
+        <!-- Выпадающий список с единичным выбором: Город -->
+        <label for="city">Город:</label>
+        <select id="city" name="city">
+            <option value="">-- Выберите город --</option>
+            <option value="msk">Москва</option>
+            <option value="nsk">Новосибирск</option>
+            <option value="spt">Санкт-Петербург</option>
+            <option value="ekb">Екатеринбург</option>
+            <option value="kzn">Казань</option>
+        </select>
+        <br>
+        <!-- Радио-баттоны: Доставка -->
+        <label><input type="radio" value="courier" name="delivery"> Курьером</label>
+        <label><input type="radio" value="pickup" name="delivery"> Самовывоз</label>
+        <br>
+        <!-- Выпадающий список с множественным выбором: Время доставки -->
+        <label for="time">Время доставки</label>
+        <br>
+        <select id="time" name="time" multiple size="5">
+            <option value="10:00-12:00">10:00-12:00</option>
+            <option value="12:00-14:00">12:00-14:00</option>
+            <option value="14:00-16:00">14:00-16:00</option>
+            <option value="16:00-18:00">16:00-18:00</option>
+            <option value="18:00-20:00">18:00-20:00</option>
+        </select>
+    </div>
+    <!-- Группа: Способ оплаты -->
+    <div class="form-group">
+        <span>Способ оплаты</span>
+        <br>
+        <!-- Радио-баттоны: Оплата -->
+        <label><input type="radio" value="cash" name="payment"> Наличный расчет</label>
+        <label><input type="radio" value="card" name="payment"> Безналичный расчет</label>
+    </div>
+    <!-- Группа: Комментарий -->
+    <div class="form-group">
+        <span>Комментарий к заказу:</span>
+        <br>
+        <!-- Многострочное поле ввода -->
+        <textarea id="comment" name="comment" placeholder="Ваш комментарий к заказу..."></textarea>
+    </div>
+    <!-- Группа: Способ получения информации -->
+    <div class="form-group">
+        <span>Отправить информацию о заказе:</span>
+        <br>
+        <!-- Чекбоксы: как отправить информацию -->
+        <label><input type="checkbox" value="SMS" name="options"> по номеру телефона</label>
+        <br>
+        <label><input type="checkbox" value="email" name="options"> на почту</label>
+    </div>
+    <!-- Группа: Кнопки - отправка формы, назад -->
+    <div class="form-group">
+        <button type="submit">Отправить</button> <a href="homeworkHTML_2.html" class="button-link">Назад</a>
+    </div>
+</form>
+</body>
+</html>

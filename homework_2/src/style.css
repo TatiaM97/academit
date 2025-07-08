@@ -1,0 +1,178 @@
+/* Стили для всего тела документа */
+body {
+    font-family: Arial, sans-serif;/* Основной шрифт страницы */
+    max-width: 800px;/* Максимальная ширина контента */
+    margin: 0 auto;/* Центрирование, отступы */
+    padding: 20px;/* Внутренние отступы от краев */
+    line-height: 1.6;/* Межстрочный интервал */
+    background-color: white;/* Цвет фона страницы */
+    color: darkslategray;/* Основной цвет текста */
+    }
+/* Стили для заголовка первого уровня */
+h1 {
+    text-align: center;/* Выравнивание текста */
+    color: black;
+    margin-bottom: 20px;/* Отступ снизу */
+    }
+/* Стили для формы */
+.form{
+    width: 100%; /* Ширина */
+    }
+/* Стили для групп элементов формы */
+.form-group {
+    border: 1px solid lightgray;/* Граница: толщина, вид границы, цвет */
+    border-radius: 5px;/* Закругление углов границы */
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: whitesmoke;
+    }
+/* Стили для элементов span внутри групп формы */
+.form-group span {
+    font-weight: bold;/* Жирное начертание текста */
+    display: block;/* Отображение как блочный элемент (занимает всю ширину) */
+    margin-bottom: 10px;
+    color: black;
+    }
+/* Стили для текстовых полей, полей телефона, email, выпадающих списков и текстовых областей */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 15px;/* Внешние отступы: сверху и снизу 5px, слева и справа 0 */
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    box-sizing: border-box;/* Учет границ и отступов в общей ширине элемента */
+    }
+/* Специальная высота для textarea */
+textarea {
+    height: 100px;/* Фиксированная высота */
+    }
+/* Стили для выпадающих списков с множественным выбором */
+select[multiple] {
+    height: auto;/* Автоматическая высота (подстраивается под содержимое) */
+    }
+/* Стили для кнопок */
+button,
+.button-link{
+    background-color: darkslategray;
+    color: white;
+    padding: 10px 15px;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;/* Изменение курсора при наведении (указатель) */
+    margin-right: 10px;/* Внешний отступ справа */
+    font-size: 1em;/* Размер шрифта */
+    line-height: 1.2;
+    display: inline-block;/* Отображение как строчно-блочный элемент */
+    text-align: center;
+    text-decoration: none;/* Чтобы <a> выглядела как кнопка */
+    }
+/* Стили для меток label */
+label {
+    display: inline-block;
+    margin: 5px 0;
+    }
+/* Стили для радио-кнопок и чекбоксов */
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+    }
+/* Стили для логотипа */
+.logo-centered {
+    display: block;
+    margin: 0 auto 20px;
+    }
+/* Горизонтальная разделительная линия */
+hr {
+    border: 0;
+    height: 1px;/* Толщина линии */
+    background-color: lightgray;
+    margin: 0;
+    width: 100%;
+    }
+/* Стили для таблицы */
+table,
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;/* Схлопывание границ ячеек */
+    margin: 20px 0;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);/* Тень для эффекта "поднятия" */
+    }
+/* Стили для ячеек таблицы */
+table th,
+table td,
+.cart-table th,
+.cart-table td {
+    border: 1px solid lightgray;
+    padding: 12px;
+    text-align: left;
+}
+/* Стили для заголовков столбцов */
+th {
+    background-color: darkslategray;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    }
+/* Стили для изображений товаров */
+td img {
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;/* Обрезка изображения по размеру */
+    border-radius: 4px;
+    }
+/* Стили для ссылок на товары */
+td a {
+    color: black;
+    text-decoration: none;/* Убираем подчеркивание */
+    font-weight: bold;
+    transition: color 0.3s;/* Плавное изменение цвета */
+    }
+/* Стили для итоговой суммы */
+tfoot th {
+    background-color: darkslategray;
+    }
+/* Стили для текста с ссылкой на форму */
+p {
+    text-align: center;
+    font-size: 1.1em;
+    margin-top: 20px;/* Отступ сверху */
+    }
+/* Стили для ссылки в тексте */
+p a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s;
+    }
+/* Стили при наведении курсора */
+button:hover,
+.button-link:hover,
+td a:hover,
+p a:hover {
+    background-color: none;
+    color: black;
+    text-decoration: underline;/* Подчеркивание при наведении */
+    }
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    /* Уменьшаем размер ячеек и шрифта */
+    th, td {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+    /* Уменьшаем размер изображений */
+    td img {
+        width: 80px;
+        height: 80px;
+    }
+}

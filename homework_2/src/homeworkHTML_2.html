@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Корзина</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<!-- Логотип / Картинка вверху страницы -->
+<img
+        src="https://avatars.mds.yandex.net/i?id=01b40457bd21d59cc61cb707e774c0022ffb4b81-4841251-images-thumbs&n=13"
+        width="200"
+        height="100"
+        alt="Картинка"
+        class="logo-centered"> <!-- Центрируется через CSS -->
+<h1>Корзина</h1>
+<hr/><!-- Разделительная линия -->
+<!-- Таблица с товарами -->
+<table class="cart-table">
+    <thead><!-- Заголовок таблицы -->
+    <tr>
+        <th colspan="2">Состав заказа</th><!-- Объединённые ячейки по горизонтали -->
+    </tr>
+    </thead>
+    <tbody><!-- Основное тело таблицы -->
+    <!-- Первый товар -->
+    <tr>
+        <td rowspan="2"><!-- Объединённые ячейки по вертикали -->
+            <img
+                    src="https://alphamega.staging.dynamicweb-cms.com/Files/Images/Ecom/Products/848253.jpg"
+                    width="100"
+                    height="100"
+                    alt="Корм Whiskas Beef">
+        </td>
+        <td>
+            <a href="https://whiskas.ru/products/sterilized/sukhoi-korm-whiskas-dlya-sterilizovannykh-koshek-s-govyadinoi-i-vkusnymi-podushechkami-1-3kg" target="_blank">
+                Корм для кошек Whiskas Beef
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td>1х1000 руб</td>
+    </tr>
+    <!-- Второй товар -->
+    <tr>
+        <td rowspan="2">
+            <img
+                    src="https://i.pinimg.com/736x/25/ae/ae/25aeaedd56b76d1b1915d74387222047.jpg"
+                    width="100"
+                    height="100"
+                    alt="Корм Whiskas Chicken">
+        </td>
+        <td>
+            <a href="https://whiskas.ru/products/kitten/sukhoi-korm-whiskas-dlya-kotyat-podushechki-s-molochnoi-nachinkoi-indeikoi-i-morkovyu-1-9kg" target="_blank">
+                Корм для котят Whiskas Chicken
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td>1х1000 руб</td>
+    </tr>
+    <!-- Третий товар -->
+    <tr>
+        <td rowspan="2">
+            <img
+                    src="https://cdn1.ozone.ru/s3/multimedia-7/6289599199.jpg"
+                    width="100"
+                    height="100"
+                    alt="Корм Whiskas Fish">
+        </td>
+        <td>
+            <a href="https://whiskas.ru/products/adult/vlazhnyi-korm-whiskasdlya-koshek-ragu-s-forelyu-i-lososem-75g" target="_blank">
+                Корм для кошек Whiskas Fish
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td>1х1000 руб</td>
+    </tr>
+    </tbody>
+    <!-- Итог таблицы -->
+    <tfoot>
+    <tr>
+        <th colspan="2">Итого к оплате</th>
+    </tr>
+    <tr>
+        <th colspan="2">3000 руб</th>
+    </tr>
+    </tfoot>
+</table>
+<hr/>
+<!-- Ссылка на форму заказа -->
+<p>
+    Для отправки заказа необходимо заполнить
+    <a href="../academit/homework2/src/homeworkHTML.html" target="_blank">форму</a>
+</p>
+</body>
+</html>
