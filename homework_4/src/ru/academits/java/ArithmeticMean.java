@@ -40,20 +40,8 @@ public class ArithmeticMean {
                 System.out.println("Ошибка: введено пустое значение или не целое число!");
             }
         }
-        // Вычисляем среднее арифметическое всех чисел в диапазоне
+        // Общий цикл для вычисления
         int sumAll = 0;
-        int countAll = 0;
-        for (
-                int i = number1;
-                i <= number2;
-                i++
-        ) {
-            sumAll += i; // Прибавляем число к общей сумме
-            countAll++; // Увеличиваем счётчик
-        }
-        double averageAll = (double) sumAll / countAll;
-
-        // Вычисляем среднее арифметическое четных чисел
         int sumEven = 0;
         int countEven = 0;
         for (
@@ -61,13 +49,15 @@ public class ArithmeticMean {
                 i <= number2;
                 i++
         ) {
+            sumAll += i;
             if (i % 2 == 0) { // Проверяем четное ли число
                 sumEven += i;
                 countEven++;
             }
         }
-        // Если четные числа есть, считаем среднее; иначе — 0
-        double averageEven = countEven > 0 ? (double) sumEven / countEven : 0;
+        int countAll = number2 - number1 + 1;
+        double averageAll = (double) sumAll / countAll; // Среднее арифметическое всех чисел
+        double averageEven = countEven > 0 ? (double) sumEven / countEven : 0; // Среднее арифметическое четных чисел
 
         //Выводим результаты
         System.out.printf("\nРезультаты для диапазона [%d, %d]:\n", number1, number2);
