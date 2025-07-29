@@ -2,7 +2,7 @@ package ru.academits.java;
 
 import java.util.Scanner;
 
-public class DigitsOfTheNumber {
+public class NumberDigits {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int digit;
