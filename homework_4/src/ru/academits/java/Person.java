@@ -8,24 +8,14 @@ public class Person {
     private String middleName;
     private String familyName;
     private int age;
-    private int birthYear;
+    private static final int MIN_AGE = 0;
 
-    // Конструктор класса
-    public Person(String name, String middleName, String familyName, int age, boolean silent) {
-        if (!silent) {
-            // Устанавливаем значения через сеттеры (с валидацией и сообщениями)
-            setName(name);
-            setMiddleName(middleName);
-            setFamilyName(familyName);
-            setAge(age);
-        } else {
-            // Прямое присваивание без валидации
+    // Конструктор класса (прямое присваивание)
+    public Person(String name, String middleName, String familyName, int age) {
             this.name = name;
             this.middleName = middleName;
             this.familyName = familyName;
             this.age = age;
-            this.birthYear = LocalDate.now().getYear() - age;
-        }
     }
 
     // Метод для проверки строки на содержание цифр
@@ -52,7 +42,7 @@ public class Person {
     }
 
     public int getBirthYear() {
-        return birthYear;
+        return LocalDate.now().getYear() - age;
     }
 
     // Сеттеры - методы для установки значений полей (с валидацией и выводом сообщений)
@@ -85,40 +75,25 @@ public class Person {
             System.out.println("Фамилия не была изменена: содержит цифры");
         } else {
             this.familyName = familyName;
-            System.out.println("Фамилия была изменено");
+            System.out.println("Фамилия была изменена");
         }
     }
 
-    public void setAge(Integer age) {
-        if (age >= 0) {
+    public void setAge(int age) {
+        if (age >= MIN_AGE) {
             this.age = age;
-            this.birthYear = LocalDate.now().getYear() - age; // Автоматическое обновление года рождения
-            System.out.println("Возраст изменен на " + age +
-                    ", год рождения обновлен: " + this.birthYear);
+            System.out.println("Возраст изменен на " + age);
         } else {
             System.out.println("Ошибка: возраст не может быть отрицательным");
         }
     }
-
-    public void setBirthYear(int birthYear) {
-        int currentYear = LocalDate.now().getYear();
-        if (birthYear <= currentYear) {
-            this.birthYear = birthYear;
-            this.age = currentYear - birthYear;  // Пересчитываем возраст автоматически
-            System.out.println("Год рождения изменен на " + birthYear +
-                    ", возраст обновлен: " + this.age);
-        } else {
-            System.out.println("Ошибка: год рождения не может быть в будущем");
-        }
-    }
-
 
     // Метод toString() для строкового представления объекта
     @Override
     public String toString() {
         return String.format(
                 "%s %s %s (Возраст: %d, Год рождения: %d)",
-                familyName, name, middleName, age, birthYear);
+                familyName, name, middleName, age, getBirthYear());
     }
 }
 
