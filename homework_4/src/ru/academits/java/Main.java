@@ -1,6 +1,5 @@
 package ru.academits.java;
 
-import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main {
@@ -8,7 +7,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         // Создаем тестовый объект Person с помощью конструктора с silent = true (без вывода сообщений)
-        Person person = new Person("Кот", "Котофеевич", "Котофеев", 5, true);
+        Person person = new Person("Кот", "Котофеевич", "Котофеев", 5);
 
         // Выводим исходную информацию с помощью toString()
         System.out.println("Данные пользователя: " + person);
@@ -22,8 +21,7 @@ public class Main {
                 System.out.println("3 - Изменить отчество");
                 System.out.println("4 - Изменить фамилию");
                 System.out.println("5 - Изменить возраст");
-                System.out.println("6 - Изменить год рождения");
-                System.out.println("7 - Показать год рождения");
+                System.out.println("6 - Показать год рождения");
                 System.out.println("0 - Выход");
                 System.out.println("Ваш выбор: ");
 
@@ -39,7 +37,7 @@ public class Main {
                 try {
                     choice = Integer.parseInt(input);
                 } catch (NumberFormatException e) {
-                    System.out.println("Ошибка: введите число от 0 до 7");
+                    System.out.println("Ошибка: введите число от 0 до 6");
                     continue;
                 }
                 // Обработка выбора
@@ -113,32 +111,7 @@ public class Main {
                         }
                         break;
 
-                    case 6: // Изменение года рождения
-                        int currentYear = LocalDate.now().getYear();
-                        while (true) {
-                            try {
-                                System.out.print("Введите год рождения (" + (currentYear - 100) + "-" + currentYear + "): ");
-                                String yearInput = scanner.nextLine().trim();
-
-                                if (yearInput.isEmpty()) {
-                                    System.out.println("Ошибка: год рождения не может быть пустым");
-                                    continue;
-                                }
-
-                                int newBirthYear = Integer.parseInt(yearInput);
-                                if (newBirthYear >= (currentYear - 100) && newBirthYear <= currentYear) {
-                                    person.setBirthYear(newBirthYear);
-                                    break;
-                                }
-                                System.out.println("Ошибка: год рождения должен быть между " +
-                                        (currentYear - 100) + " и " + currentYear);
-                            } catch (NumberFormatException e) {
-                                System.out.println("Ошибка: введите целое число");
-                            }
-                        }
-                        break;
-
-                    case 7:
+                    case 6:
                         System.out.println("\nГод рождения: " + person.getBirthYear());
                         break;
 
